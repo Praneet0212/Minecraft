@@ -52,6 +52,7 @@ function my_keydown(e)
   block_image_height = block_image_height + 10;
   document.getElementById("current_width").innerHTML = block_image_width;
   document.getElementById("current_height").innerHTML = block_image_height;
+  canvas.remove(player_object);
   player_update()
  }
  if (e.shiftKey == true && keyPressed == '77') 
@@ -60,7 +61,8 @@ function my_keydown(e)
      block_image_height = block_image_height - 10;
      block_image_width = block_image_width - 10;
      document.getElementById("current_height").innerHTML = block_image_height;
-     document.getElementById("current_width").innerHTML = block_image_width; 
+     document.getElementById("current_width").innerHTML = block_image_width;
+     canvas.remove(player_object); 
      player_update()   
  }
 
@@ -136,7 +138,9 @@ function up()
     if (player_y >= 0)
     {
         player_y = player_y - 10;
+        console.log("block_image_height = " + block_image_height);
         console.log("When up arrow is pressed, x = " + player_x + " | y = " + player_y);
+        canvas.remove(player_object);
         player_update();
     }
 }
@@ -146,7 +150,9 @@ function down()
     if (player_y <= 600)
     {
         player_y = player_y + 10;
+        console.log("block_image_height = " + block_image_height);
         console.log("When up arrow is pressed, x = " + player_x + " | y = " + player_y);
+        canvas.remove(player_object);
         player_update();
     }
 }
@@ -156,7 +162,9 @@ function left()
     if (player_x >= 0)
     {
         player_x = player_x - 10;
+        console.log("block_image_width = " + block_image_width);
         console.log("When up arrow is pressed, x = " + player_x + " | y = " + player_y);
+        canvas.remove(player_object);
         player_update();
     }
 }
@@ -166,7 +174,9 @@ function right()
     if (player_x <= 1000)
     {
         player_x = player_x + 10;
+        console.log("block_image_width = " + block_image_width);
         console.log("When up arrow is pressed, x = " + player_x + " | y = " + player_y);
+        canvas.remove(player_object);
         player_update();
     }
 }
